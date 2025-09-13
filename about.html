@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Batafsil Ma'lumot</title>
-    <link rel="stylesheet" href="css/output.css" />
-  </head>
-  <body class="bg-base-200 p-6">
-    <div id="container" class="grid gap-4 md:grid-cols-3"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batafsil</title>
+  <link rel="stylesheet" href="css/output.css" />
+</head>
+<body class="bg-base-200 p-6">
+  <div id="info-car" class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow">
 
-    <p
-      id="error"
-      class="hidden justify-center col-span-3 alert alert-error max-w-2xl w-[500px]"
-    >
-      Xatolik bo'ldi!
-    </p>
+  </div>
 
-    <template id="aboutTemplate">
-      <div class="card p-6 bg-white shadow-lg max-w-xl mx-auto">
-        <h1 id="car-title" class="text-2xl font-bold mb-4"></h1>
-        <p id="car-description" class="mb-4"></p>
-        <p><strong>Kategoriya:</strong> <span id="car-category"></span></p>
-        <p><strong>Narx:</strong> <span id="car-price"></span></p>
-      </div>
-    </template>
+  <p id="error" class="hidden alert alert-error mt-4 text-center">
+    Xatolik bo‘ldi, ma’lumot topilmadi!
+  </p>
 
-    <script src="about.js"></script>
-  </body>
+  <script src="about.js"></script>
+</body>
 </html>

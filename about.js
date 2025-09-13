@@ -1,26 +1,31 @@
-const elContainer = document.getElementById("container");
-const elCard = document.getElementById("aboutTemplate");
+const elInfoCar = document.getElementById("info-car");
 const elError = document.getElementById("error");
 
-fetch(`https://json-api.uz/api/project/fn43/cars/${id}`)
-  .then((res) => res.json())
-  .then((res) => {
-    elContainer.innerHTML = "";
-    info(res.data);
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+if (!id) {
+  elError.classList.remove("hidden");
+} else {
+
+ fetch(`https://json-api.uz/api/project/fn43/cars/${id}`)
+  .then(res => res.json())
+  .then(car => {
+   
+
+    elInfoCar.innerHTML = `
+      <div class="card text-black p-6">
+        <h2 class="text-2xl font-bold mb-4">${car.name}</h2>
+        <p class="mb-2"><strong>Brend:</strong> ${car.brand}</p>
+        <p class="mb-2"><strong>Kategoriya:</strong> ${car.category}</p>
+        <p class="mb-2"><strong>Narxi:</strong> $${car.price}</p>
+        <p class="mb-4">${car.description}</p>
+        <a href="index.html" class="btn btn-primary">Orqaga qaytish</a>
+      </div>
+    `;
   })
   .catch(() => {
     elError.classList.remove("hidden");
   });
 
-function info(card) {
-  card.forEach((el) => {
-    const clone = elCard.cloneNode(true).content;
-    const elTitle = clone.querySelector("h2");
-    const elDescription = clone.querySelector("p");
-    const elCategory = clone.querySelector("mark");
-    elTitle.innerText = el.name;
-    elDescription.innerText = el.description;
-    elCategory.innerText = el.category;
-    elContainer.append(clone);
-  });
 }

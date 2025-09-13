@@ -2,7 +2,7 @@ const elContainer = document.getElementById("container");
 const elCard = document.getElementById("cardTemplate");
 const elSkeleton = document.getElementById("skeletonTemplate");
 const elError = document.getElementById("error");
-// 1. Skeleton chiqarish
+
 let skeleton = getSkletionCount();
 for (let i = 0; i < skeleton; i++) {
   elContainer.append(elSkeleton.cloneNode(true).content);
@@ -58,7 +58,7 @@ function info(card) {
     elDescription.innerText = car.description;
     elCategory.innerText = car.category;
     elDeleteBtn.id = car.id;
-    elInfoBtn.id=car.id
+    elInfoBtn.id = car.id;
     elInfoBtn.addEventListener("click", () => {
       window.location.href = `about.html?id=${car.id}`;
     });
