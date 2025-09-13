@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body class="bg-base-200 p-6">
+    <form></form>
     <div id="container" class="grid gap-4 md:grid-cols-3"></div>
     <p
       id="error"
@@ -20,14 +21,10 @@
       <div class="card flex justify-between p-4 bg-gray-500 mt-3">
         <h2 class="card-title text-center"></h2>
         <p></p>
+        <div><mark class=""></mark></div>
         <div class="flex justify-end gap-5">
-         <div class="flex justify-start">
-           <mark
-          class="flex items-center justify-center  text-center rounded-[4px] h-[50px]  mt-3.5"
-        ></mark>
-         </div>
-        <button class="delete-btn flex items-center justify-center  h-[60px]  w-[400px] text-center cursor-pointer rounded-2xl mt-3.5 bg-red-700">Delet</button>
-        <button class="info-btn flex items-center justify-center  h-[60px]  w-[400px] text-center cursor-pointer rounded-2xl mt-3.5 bg-blue-400">Batafsil</button>
+          <button class="delete-btn btn btn-soft btn-error">Delet</button>
+          <button class="info-btn btn btn-soft btn-info">Info</button>
         </div>
       </div>
     </template>
