@@ -7,8 +7,82 @@
     <link rel="stylesheet" href="css/output.css" />
   </head>
   <body class="bg-base-200 p-6">
-    <form></form>
-    <div id="container" class="grid gap-4 md:grid-cols-3"></div>
+    <div id="successAlert" role="alert" class="alert alert-success hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 shrink-0 stroke-current"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span>Muvaffaqiyatli qo‘shildi!</span>
+    </div>
+
+    <div id="changeAlert" role="alert" class="alert alert-success hidden">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 shrink-0 stroke-current"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span>Muvaffaqiyatli Yangilandi!</span>
+    </div>
+    <form id="form" class="flex flex-col">
+      <input
+        type="text"
+        placeholder="Mashina nomi"
+        name="name"
+        class="input input-info"
+      />
+
+      <textarea
+        placeholder="Mashina haqida malumot"
+        name="description"
+        class="textarea textarea-accent"
+      ></textarea>
+
+      <input
+        type="number"
+        placeholder="Narxni kiriting"
+        name="price"
+        class="input input-neutral"
+      />
+
+      <input
+        type="text"
+        placeholder="Kategoryani yozing"
+        name="category"
+        class="input input-primary"
+      />
+      <div id="addBtn">
+        <button type="reset" class="btn btn-dash btn-error">Tozalash</button>
+        <button type="submit" id="addB" class="btn btn-dash btn-success">
+          Tasdiqlash
+        </button>
+      </div>
+      
+        <div>
+           <button id="editBtn" type="submit" class="hidden btn btn-dash btn-success">
+          Tahrirlash
+        </button>
+        </div>
+      
+    </form>
+
+    <div id="container" class="grid gap-5 md:grid-cols-3"></div>
     <p
       id="error"
       class="hidden justify-center col-span-3 alert alert-error max-w-2xl w-[500px]"
@@ -22,9 +96,10 @@
         <h2 class="card-title text-center"></h2>
         <p></p>
         <div><mark class=""></mark></div>
-        <div class="flex justify-end gap-5">
-          <button class="delete-btn btn btn-soft btn-error">Delet</button>
-          <button class="info-btn btn btn-soft btn-info">Info</button>
+        <div class="flex justify-baseline jus gap-3">
+          <button class="delete-btn btn btn-soft btn-error">Delet 🗑</button>
+          <button class="info-btn btn btn-soft btn-info">Info 📑</button>
+          <button class="edit-btn btn btn-soft btn-info">IEdit 🖊</button>
         </div>
       </div>
     </template>

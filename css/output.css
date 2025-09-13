@@ -1539,6 +1539,9 @@
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -1578,6 +1581,9 @@
   .w-3\/4 {
     width: calc(3/4 * 100%);
   }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
   .w-\[400px\] {
     width: 400px;
   }
@@ -1593,14 +1599,23 @@
   .max-w-2xl {
     max-width: var(--container-2xl);
   }
+  .max-w-\[550px\] {
+    max-width: 550px;
+  }
   .max-w-\[900px\] {
     max-width: 900px;
   }
   .max-w-xl {
     max-width: var(--container-xl);
   }
+  .flex-none {
+    flex: none;
+  }
   .flex-shrink {
     flex-shrink: 1;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
   }
   .flex-grow {
     flex-grow: 1;
@@ -1632,6 +1647,9 @@
   .resize {
     resize: both;
   }
+  .flex-col {
+    flex-direction: column;
+  }
   .flex-wrap {
     flex-wrap: wrap;
   }
@@ -1652,6 +1670,9 @@
   }
   .justify-start {
     justify-content: flex-start;
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -1689,10 +1710,35 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .btn-dash {
+    &:not( .btn-active, :hover, :active:focus, :focus-visible, :disabled, [disabled], .btn-disabled, :checked ) {
+      --btn-shadow: "";
+      border-style: dashed;
+      --btn-bg: #0000;
+      --btn-fg: var(--btn-color);
+      --btn-border: var(--btn-color);
+      --btn-noise: none;
+    }
+    @media (hover: none) {
+      &:hover:not( .btn-active, :active, :focus-visible, :disabled, [disabled], .btn-disabled, :checked ) {
+        --btn-shadow: "";
+        border-style: dashed;
+        --btn-bg: #0000;
+        --btn-fg: var(--btn-color);
+        --btn-border: var(--btn-color);
+        --btn-noise: none;
+      }
+    }
+  }
   .alert-error {
     border-color: var(--color-error);
     color: var(--color-error-content);
     --alert-color: var(--color-error);
+  }
+  .alert-success {
+    border-color: var(--color-success);
+    color: var(--color-success-content);
+    --alert-color: var(--color-success);
   }
   .bg-base-100 {
     background-color: var(--color-base-100);
@@ -1718,14 +1764,26 @@
   .mask-repeat {
     mask-repeat: repeat;
   }
+  .stroke-current {
+    stroke: currentcolor;
+  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
+  .pr-4 {
+    padding-right: calc(var(--spacing) * 4);
+  }
+  .pl-4 {
+    padding-left: calc(var(--spacing) * 4);
+  }
   .text-center {
     text-align: center;
+  }
+  .align-bottom {
+    vertical-align: bottom;
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -1841,9 +1899,38 @@
     --btn-color: var(--color-primary);
     --btn-fg: var(--color-primary-content);
   }
+  .btn-success {
+    --btn-color: var(--color-success);
+    --btn-fg: var(--color-success-content);
+  }
+  .input-info {
+    &, &:focus, &:focus-within {
+      --input-color: var(--color-info);
+    }
+  }
+  .input-neutral {
+    &, &:focus, &:focus-within {
+      --input-color: var(--color-neutral);
+    }
+  }
+  .input-primary {
+    &, &:focus, &:focus-within {
+      --input-color: var(--color-primary);
+    }
+  }
+  .textarea-accent {
+    &, &:focus, &:focus-within {
+      --input-color: var(--color-accent);
+    }
+  }
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-4 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 }
